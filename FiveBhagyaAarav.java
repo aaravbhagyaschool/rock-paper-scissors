@@ -8,23 +8,26 @@ import java.util.*;
  * You can create additional methods but must have the move method
  * 
  */
-public class PlayerExample implements Player
+public class FiveBhagyaAarav implements Player
 {
-    private static String name = "PlayerExample";
+    private static String name = "FiveBhagyaAarav";
+
     /**
-     * An example of a method - replace this comment with your own
-     * You must create some kind of logic of what to play against your opponent...start thinking!
+     * Implements a counter-strategy against the opponent.
      * 
-     * @return      the move you want to play against opponent
-     *              "r" - rock
-     *              "p" - paper
-     *              "s" - scissors
-     *              anything else - forfeit the turn
+     * @return      
      */
     public String move(String [] myMoves, String [] opponentMoves, int myScore, int opponentScore)
     {
-        return " ";
+        // First move: Counter "r" (rock) with "p" (paper)
+        if (myMoves.length == 0) {
+            return "p";
+        }
+        
+        // Subsequent moves: Counter "s" (scissors) with "r" (rock)
+        return "r";
     }
+
     /**
      * Returns the name of the player
      * 
@@ -35,4 +38,3 @@ public class PlayerExample implements Player
         return name;
     }
 }
-
